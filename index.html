@@ -5,7 +5,6 @@
 <title>Chatbot Jarvis</title>
 
 <style>
-    /* === GLOBAL === */
     body {
         margin: 0;
         padding: 0;
@@ -17,7 +16,6 @@
         flex-direction: column;
     }
 
-    /* === TITLE (ChatGPT style) === */
     #headerTitle {
         text-align: center;
         font-size: 42px;
@@ -26,7 +24,6 @@
         margin-bottom: 30px;
     }
 
-    /* === CHATBOX (scroll area) === */
     #chatbox {
         flex: 1;
         overflow-y: auto;
@@ -56,7 +53,6 @@
         margin-right: auto;
     }
 
-    /* === INPUT AREA (ChatGPT pill style) === */
     #inputAreaWrapper {
         width: 100%;
         display: flex;
@@ -89,7 +85,6 @@
         font-size: 18px;
     }
 
-    /* === ICONS === */
     .plus {
         font-size: 24px;
         opacity: 0.6;
@@ -111,7 +106,6 @@
 
 <div id="chatbox"></div>
 
-<!-- INPUT CHATGPT STYLE -->
 <div id="inputAreaWrapper">
     <div id="inputArea">
         <span class="plus">+</span>
@@ -167,7 +161,6 @@ function addMessage(text, sender) {
     box.scrollTop = box.scrollHeight;
 }
 
-/* SEND BUTTON LOGIC */
 async function sendMsg() {
     const input = document.getElementById("prompt");
     const text = input.value.trim();
@@ -180,12 +173,10 @@ async function sendMsg() {
     addMessage(reply, "bot");
 }
 
-/* ENTER SEND */
 document.getElementById("prompt").addEventListener("keypress", (e) => {
     if (e.key === "Enter") sendMsg();
 });
 
-/* CLICK SEND */
 document.addEventListener("click", function(e) {
     if (e.target.id === "btnSend") sendMsg();
 });
